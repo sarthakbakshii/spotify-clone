@@ -41,7 +41,11 @@ export const MyUserContextProvider = (props: Props) => {
 
   const [subscription, setSubscription] = useState<Subscription | null>(null);
 
-  const getUserDetails = () => supabase.from("users").select("*").single();
+  const getUserDetails = () => 
+    supabase
+      .from("users")
+      .select("*")
+      .single();
 
   const getSubscription = () =>
     supabase
