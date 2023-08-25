@@ -17,7 +17,7 @@ import { useUser } from "@/hooks/useUser";
 import useAuthModal from "@/hooks/useAuthModal";
 
 import Button from "./Button";
-import second from ''
+import { toast } from "react-hot-toast";
 
 
 interface HeaderProps {
@@ -39,7 +39,9 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
     router.refresh();
 
     if (error) {
-      console.log(error);
+      toast.error( error.message )
+    }else{
+      toast.success('logged out!')
     }
   };
 
