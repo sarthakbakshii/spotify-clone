@@ -30,9 +30,11 @@
     export default Button;
 
 
-With this you dont have to directly go and do assign all props, it will fetch it from its HTML element extended from.
-
+With this you dont have to directly go and do assign all props, it will fetch it from its HTML element extended from.\
 For full code, visit : `component/Button.tsx` and `component/Input.tsx`
 
+2) I wasnt awair of this. this is used in a page level so that, data on the page do not get cashed and alwayes get up to dated. \
+   `export const revalidate = 0;`
 
+   
 bd password : U*vQ4s-W$RkwWwL
