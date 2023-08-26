@@ -1,6 +1,8 @@
-bd password : U*vQ4s-W$RkwWwL
+# Sotify Clone
 
-## Learning
+
+
+## Learning and error fased while development
 1) Insted of directly creating a HTML element custom component, the new and better way i learned :
    ```
     import React, { forwardRef } from "react";
@@ -26,7 +28,11 @@ bd password : U*vQ4s-W$RkwWwL
     Button.displayName = "Button";
     
     export default Button;
-```
+
+
 With this you dont have to directly go and do assign all props, it will fetch it from its HTML element extended from.
 
-For full code, visit : `component/Button.tsx` and `Input.tsx`
+For full code, visit : `component/Button.tsx` and `component/Input.tsx`
+
+
+bd password : U*vQ4s-W$RkwWwL
