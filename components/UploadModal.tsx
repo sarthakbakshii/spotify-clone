@@ -18,7 +18,7 @@ const UploadModal = () => {
   const { user } = useUser();
   const supabaseClient = useSupabaseClient();
   const router = useRouter();
-  console.log(user)
+  
   const { register, handleSubmit, reset } = useForm<FieldValues>({
     defaultValues: {
       author: "",
@@ -50,7 +50,6 @@ const UploadModal = () => {
         toast.error("Missing fields");
         return;
       }
-      console.log("52");
 
       // upload song to supabase s3
       const { 
@@ -62,14 +61,12 @@ const UploadModal = () => {
           cacheControl: "3600",
           upsert: false,
         });
-      console.log("60");
 
       if (songError) {
         setIsLoading(false);
         return toast.error("Failed song upload.");
       }
 
-      console.log("65");
       // upload image to supabase s3
 
       const { data: imageData, error: imageError } =
@@ -80,7 +77,6 @@ const UploadModal = () => {
             upsert: false,
           });
 
-      console.log("76");
       if (imageError) {
         setIsLoading(false);
         return toast.error("Failed image upload.");
@@ -88,7 +84,6 @@ const UploadModal = () => {
 
       // now upload data in songs sql table
       
-      console.log("90");
       const { error: supabaseError } = await supabaseClient
         .from("songs")
         .insert({
@@ -99,19 +94,19 @@ const UploadModal = () => {
           song_path: songData.path,
         });
 
-      console.log("95");
       if (supabaseError) {
         setIsLoading(false);
         return toast.error(supabaseError.message);
       }
-      console.log("100");
+
+
       // if no error
       router.refresh();
       setIsLoading(false);
       toast.success("Song created!");
       reset();
       uploadModal.onClose();
-      //insert or update on table "songs" violates foreign key constraint "songs_user_id_fkey"
+      
     } catch (error) {
       toast.error("Something went wrong");
     } finally {
