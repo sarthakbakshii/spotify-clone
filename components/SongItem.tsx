@@ -19,16 +19,18 @@ const SongItem: React.FC<Props> = ({ data, onClick }) => {
       className="relative group flex flex-col items-center justify-center rounded-md overflow-hidden gap-x-4 bg-neutral-400/5 cursor-pointer hover:bg-neutral-400/100 transition p-3"
     >
       <div className="relative aspect-square w-full h-full rounded-md overflow-hidden">
-        <Image 
+        <Image
           className="object-cover"
-          src={ imagePath || './images/liked.png'}
+          src={imagePath || "./images/liked.png"}
           fill
-          alt="Images" 
+          alt="Images"
         />
       </div>
       <div className="flex flex-col items-start w-full pt-4  gap-y-1">
-        <p className="font-semibold truncate w-full">{data.title}</p>
-        <p className="text-neutral-400 text-sm w-full truncate">{data.author}</p>
+        <p className="font-semibold truncate w-full capitalize">{data.title}</p>
+        <p className="text-neutral-400 text-sm w-full truncate">
+          by <span className="capitalize">{data.author}</span>
+        </p>
       </div>
       <div className="absolute bottom-24 right-5">
         <PlayButton />
