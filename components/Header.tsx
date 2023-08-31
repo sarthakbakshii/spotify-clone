@@ -90,16 +90,6 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
                 className="bg-white w-fit"
               >
                 <FaUserAlt />
-                {/* <Image
-                  // className="object-cover"
-                  className="w-10 h-10 object-cover"
-                  width="3"
-                  height={"3"}
-                  // fill
-                  // fill
-                  src="/image/Avatar.gif"
-                  alt="image"
-                /> */}
               </Button>
             </div>
           ) : (

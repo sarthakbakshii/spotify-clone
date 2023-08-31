@@ -31,11 +31,12 @@ const SearchInput = () => {
 
   return (
     <Input
-        placeholder="What do you want to listen to ?"
-        value={value}
-        onChange={ (e) => setValue(e?.target?.value) }
+      placeholder="What do you want to listen to ?"
+      value={value}
+      autoFocus
+      onChange={(e) => setValue(e?.target?.value)}
     />
-  )
+  );
 }
 
 export default SearchInput
