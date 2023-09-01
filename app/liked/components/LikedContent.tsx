@@ -8,6 +8,7 @@ import { useUser } from "@/hooks/useUser";
 import { Song } from "@/types";
 import MediaItem from "@/components/MediaItem";
 import LikeButton from "@/components/LikeButton";
+import useAuthModal from "@/hooks/useAuthModal";
 
 interface Props {
   songs: Song[];
@@ -17,12 +18,21 @@ const LikedContent: React.FC<Props> = ({ songs }) => {
   const router = useRouter();
   const { isLoading, user } = useUser();
 
+  const authModal = useAuthModal();
+
   // if no user return to home
+
+  useEffect( () =>{
+  if (!user) {
+    authModal.onOpen();
+  }
+  },[ user])
+
   useEffect(() => {
     if (!isLoading && !user) {
-      router.replace("/");
+       router.replace("/");
     }
-  }, [isLoading, router, user]);
+  }, [ isLoading, router, user]);
 
   // if no song
   if (songs.length === 0) {
