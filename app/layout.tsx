@@ -9,7 +9,7 @@ import ModalProvider from "@/providers/ModalProvider";
 import ToastProvider from "@/providers/ToastProvider";
 
 import getSongsByUserId from "@/actions/getSongsByUserId";
-import Player from "@/components/Player";
+import Player from "@/components/MusicPlayer/Player";
 
 const font = Figtree({ subsets: ["latin"] });
 

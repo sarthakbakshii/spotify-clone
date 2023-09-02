@@ -11,9 +11,9 @@ import useSound from "use-sound";
 import { Song } from "@/types";
 import usePlayer from "@/hooks/usePlayer";
 
-import Slider from "./MusicPlayer/Slider";
-import MediaItem from "./MediaItem";
-import LikeButton from "./LikeButton";
+import Slider from "./Slider";
+import MediaItem from "../MediaItem";
+import LikeButton from "../LikeButton";
 
 interface Props {
   song: Song;

@@ -1,14 +1,16 @@
 "use client";
 
 import React, { useEffect } from "react";
-
 import { useRouter } from "next/navigation";
 
-import { useUser } from "@/hooks/useUser";
 import { Song } from "@/types";
+
+import { useUser } from "@/hooks/useUser";
+import useAuthModal from "@/hooks/useAuthModal";
+import useOnPlay from "@/hooks/useOnPlay";
+
 import MediaItem from "@/components/MediaItem";
 import LikeButton from "@/components/LikeButton";
-import useAuthModal from "@/hooks/useAuthModal";
 
 interface Props {
   songs: Song[];
@@ -19,6 +21,8 @@ const LikedContent: React.FC<Props> = ({ songs }) => {
   const { isLoading, user } = useUser();
 
   const authModal = useAuthModal();
+
+  const onPlay = useOnPlay(songs);
 
   // if no user return to home
 
@@ -45,21 +49,19 @@ const LikedContent: React.FC<Props> = ({ songs }) => {
 
   return (
     <div className="flex flex-col gap-y-2 w-full p-6">
-        {
-            songs.map((song) => (
-                <div key={song.id} className="flex items-center gap-x-4 w-full">
-                    <div className="flex-1">
-                        <MediaItem
-                          onClick={() =>{}}
-                          data={song}
-                         />
-                    </div>
-                    <LikeButton songId={song.id} />
-                </div>
-            ))
-        }
+      {songs.map((song) => (
+        <div key={song.id} className="flex items-center gap-x-4 w-full">
+          <div className="flex-1">
+            <MediaItem 
+              onClick={(id: string) => onPlay(id)}
+              data={song} 
+            />
+          </div>
+          <LikeButton songId={song.id} />
+        </div>
+      ))}
     </div>
-  )
+  );
 };
 
 export default LikedContent;
