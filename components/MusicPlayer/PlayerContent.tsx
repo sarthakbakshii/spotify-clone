@@ -14,6 +14,8 @@ import usePlayer from "@/hooks/usePlayer";
 import Slider from "./Slider";
 import MediaItem from "../MediaItem";
 import LikeButton from "../LikeButton";
+import { setTimeout } from "timers";
+import MusicDuration from "./MusicDuration";
 
 interface Props {
   song: Song;
@@ -54,16 +56,18 @@ const PlayerContent: React.FC<Props> = ({ song, songUrl }) => {
     player.setId(previousSong);
   };
 
-  const [play, { pause, sound }] = useSound(songUrl, {
+  const [play, { pause, sound, duration }] = useSound(songUrl, {
     volume: volume,
     onplay: () => setIsPlaying(true),
     onend: () => {
-        setIsPlaying(false);
-        onPlayNext();
+      setIsPlaying(false);
+      onPlayNext();
     },
-    onPause : () => setIsPlaying(false),
-    format: ['mp3']
+    onPause: () => setIsPlaying(false),
+    format: ["mp3"],
   });
+
+
 
   useEffect(() => {
     sound?.play();
@@ -76,6 +80,7 @@ const PlayerContent: React.FC<Props> = ({ song, songUrl }) => {
     if(!isPlaying) {
         play()
         setIsPlaying(true)
+  
     }else{
         pause()
         setIsPlaying(false);
@@ -94,55 +99,65 @@ const PlayerContent: React.FC<Props> = ({ song, songUrl }) => {
   const VolumeIcon = volume ? HiSpeakerWave :  HiSpeakerXMark;
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 h-full">
-      <div className="flex w-full justify-start">
-        <div className="flex items-center gap-x-4">
-          <MediaItem data={song} />
-          <LikeButton songId={song.id} />
+    <div className="h-full">
+      <div className="grid grid-cols-2 md:grid-cols-3 h-[calc(45px)] md:h-full">
+        <div className="flex w-full justify-start ">
+          <div className="flex items-center gap-x-4">
+            <MediaItem data={song} />
+            <LikeButton songId={song.id} />
+          </div>
+        </div>
+
+        {/* player controller for mobile */}
+
+        <div className="md:hidden flex col-auto w-full justify-end items-center">
+          <div
+            onClick={handlePlay}
+            className="h-10 w-10 flex items-center justify-center rounded-full bg-white cursor-pointer"
+          >
+            <Icon size={30} className="text-black" />
+          </div>
+        </div>
+
+        {/* Player controller for desktop */}
+        <div className="hidden h-full md:flex flex-col justify-center items-center w-full max-w-[722px] ">
+          <div className="md:flex justify-center items-center w-full max-w-[722px] gap-x-4 ">
+            <AiFillStepBackward
+              onClick={onPlayPrevious}
+              size={28}
+              className=" text-neutral-400 cursor-pointer hover:text-white transition"
+            />
+            <div
+              onClick={handlePlay}
+              className="h-8 w-8 flex items-center justify-center rounded-full bg-white cursor-pointer p-1"
+            >
+              <Icon size={28} className="text-black" />
+            </div>
+            <AiFillStepForward
+              onClick={onPlayNext}
+              size={28}
+              className=" text-neutral-400 cursor-pointer hover:text-white transition"
+            />
+          </div>
+          <div className="w-full">
+            <MusicDuration isPlaying={isPlaying} duration={duration} />
+          </div>
+        </div>
+
+        {/* volume */}
+        <div className="hidden md:flex w-full justify-end pr-2">
+          <div className="flex items-center gap-x-2 w-[120px]">
+            <VolumeIcon
+              onClick={toggleMute}
+              size={34}
+              className="cursor-pointer"
+            />
+            <Slider value={volume} onChange={(value) => setVolume(value)} />
+          </div>
         </div>
       </div>
-
-      {/* player controller for mobile */}
-
-      <div className="md:hidden flex col-auto w-full justify-end items-center">
-        <div
-          onClick={handlePlay}
-          className="h-10 w-10 flex items-center justify-center rounded-full bg-white cursor-pointer"
-        >
-          <Icon size={30} className="text-black" />
-        </div>
-      </div>
-
-      {/* Player controller for desktop */}
-      <div className="hidden h-full md:flex justify-center items-center w-full max-w-[722px] gap-x-6">
-        <AiFillStepBackward
-          onClick={onPlayPrevious}
-          size={30}
-          className=" text-neutral-400 cursor-pointer hover:text-white transition"
-        />
-        <div
-          onClick={handlePlay}
-          className="h-10 w-10 flex items-center justify-center rounded-full bg-white cursor-pointer p-1"
-        >
-          <Icon size={30} className="text-black" />
-        </div>
-        <AiFillStepForward
-          onClick={onPlayNext}
-          size={30}
-          className=" text-neutral-400 cursor-pointer hover:text-white transition"
-        />
-      </div>
-
-      {/* volume */}
-      <div className="hidden md:flex w-full justify-end pr-2">
-        <div className="flex items-center gap-x-2 w-[120px]">
-          <VolumeIcon
-            onClick={toggleMute}
-            size={34}
-            className="cursor-pointer"
-          />
-          <Slider value={volume} onChange={(value) => setVolume(value)} />
-        </div>
+      <div className="w-full">
+        <MusicDuration isPlaying={isPlaying} duration={duration} />
       </div>
     </div>
   );
