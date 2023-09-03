@@ -44,7 +44,7 @@ const MusicDuration: React.FC<Props> = ({
 
 
   return (
-    <div className="flex justify-center items-center gap-x-2 ">
+    <div className="group flex justify-center items-center gap-x-2 md:h-[25px] cursor-pointer ">
       <span className="text-neutral-500 w-8 text-sm hidden md:flex">
         {MusicCounter.min}:{MusicCounter.sec}
       </span>
@@ -56,8 +56,8 @@ const MusicDuration: React.FC<Props> = ({
         step={1}
         aria-label="duration"
       >
-        <RadixSlider.Track className="bg-neutral-600 relative grow rounded-full h-[3px]">
-          <RadixSlider.Range className="absolute bg-white rounded-full h-full" />
+        <RadixSlider.Track className="bg-neutral-600 relative grow rounded-full h-[3px] group-hover:h-[6px] transition">
+          <RadixSlider.Range className="absolute bg-white rounded-full h-full  transition  group-hover:bg-green-500" />
         </RadixSlider.Track>
         {/* <RadixSlider.Thumb /> */}
       </RadixSlider.Root>

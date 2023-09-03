@@ -124,18 +124,18 @@ const PlayerContent: React.FC<Props> = ({ song, songUrl }) => {
           <div className="md:flex justify-center items-center w-full max-w-[722px] gap-x-4 ">
             <AiFillStepBackward
               onClick={onPlayPrevious}
-              size={28}
+              size={30}
               className=" text-neutral-400 cursor-pointer hover:text-white transition"
             />
             <div
               onClick={handlePlay}
-              className="h-8 w-8 flex items-center justify-center rounded-full bg-white cursor-pointer p-1"
+              className="h-9 w-9 flex items-center justify-center rounded-full bg-white cursor-pointer p-1"
             >
-              <Icon size={28} className="text-black" />
+              <Icon size={30} className="text-black" />
             </div>
             <AiFillStepForward
               onClick={onPlayNext}
-              size={28}
+              size={30}
               className=" text-neutral-400 cursor-pointer hover:text-white transition"
             />
           </div>
