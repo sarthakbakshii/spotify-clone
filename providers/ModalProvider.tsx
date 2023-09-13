@@ -4,8 +4,13 @@ import React, { useEffect, useState } from "react";
 import Modal from "@/components/Modal/Modal";
 import AuthModal from "@/components/Modal/AuthModal";
 import UploadModal from "@/components/Modal/UploadModal";
+import SubscribeModal from "@/components/Modal/SubscribeModal";
+import { ProductWithPrice } from "@/types";
 
-const ModalProvider = () => {
+interface Props {
+  products : ProductWithPrice[]
+}
+const ModalProvider: React.FC<Props> = ({ products }) => {
   const [isMounted, setIsMounted] = useState(false);
 
   // handling hydration error in modal
@@ -25,6 +30,7 @@ const ModalProvider = () => {
     <>
       <AuthModal />
       <UploadModal />
+      <SubscribeModal products={products} />
     </>
   );
 };
