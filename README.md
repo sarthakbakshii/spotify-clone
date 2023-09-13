@@ -59,7 +59,7 @@ With this you dont have to directly go and do assign all props, it will fetch it
              in my case it is : ``.\stripe listen --forward-to loaclhost:3000/api/webhooks``.\
     step 4 : for testing payments : `` stripe trigger payment_intent.succeeded ``.
 
-   NOTE : always keep step 3 on , so that youy supabse and strip will be in sync in local host testing
+   NOTE : always keep step 3 on and your machine on , so that your supabse and strip will be in sync in local host testing
           
 
 
