@@ -1,5 +1,11 @@
 # Sotify Clone
 
+Spotify clone that have its own User, Adding & Playing Music, Favorites Selection and lots more feature. <br/> 
+In this clone no Spotify Api is used, but funtionality using its own backend, s3 bucket and database.
+
+### Tech Stacks
+<img src="https://www.rlogical.com/wp-content/uploads/2023/03/Rlogical-Blog-Images-thumbnail-1.webp" />
+
 You can create a user to add music or play music. or use use the credentials below.
 
 User 1 : sarthakbakshi14@gmail.com \
