@@ -5,7 +5,8 @@ In this clone no Spotify Api is used, but funtionality using its own backend, s3
 
 ### Tech Stacks
 <span> &#8226; </span> ` Next js ` <span> &#8226; </span> ` Typescript ` <span> &#8226; </span> ` Stripe payment ` <span> &#8226; </span>` Supabase ` <span> &#8226; </span> ` Tailwind `  <br />
-Additional use full packages installed : <br /> 
+<br />
+<b> Additional use full packages installed : </b> <br /> 
  1)  <a href="https://www.radix-ui.com"> radix-ui </a> ( Took <a href="https://www.radix-ui.com/primitives/docs/components/dialog"> Modal </a> & <a href="https://www.radix-ui.com/primitives/docs/components/slider"> Slider </a> for music player and volume slider ).
  2) <a href="https://react-hot-toast.com/"> react-hot-toast </a> ( for making toast popup ).
  3) <a href="https://www.davidhu.io/react-spinners/"> react-spinners </a> ( for loader screens ).
@@ -13,7 +14,21 @@ Additional use full packages installed : <br />
  5) <a href="https://docs.pmnd.rs/zustand/getting-started/introduction" > zustand </a> ( for state managent )
  6) [ ... etc ]
 
+### General Functionalities 
+1) User can play song what he likes and can add songs also.
+2) To `play`/`like`/`add` any songs user must be logged-in.
+3) Addition of song is for `premium` user only, can take `subscription` to add any music to library.
+4) In `library` section and `liked songs` section, only the songs you have marked will be avivible.
+5) On `search` section and `home page` all songs in s3 will be there for all users even logged out user too.
+6) On `music player` section just as original, song `pause-play` `volume up-down`, `mute`, `next-previous songs` and `song duration slider` is also available.
+7) App is responsive
 
+#### Account Functionalities 
+1) To achive account functionailty Supabase Auth has been use.
+2) User can `log-in`, `sign-up`, can use `magic link` fuctionalitiy to log-in and can `reset password`.
+3) On sign-up and magic link login, a mail will be sent to you provided gmail
+
+#### For play arround
 You can create a user to add music or play music. or use use the credentials below.
 
 User 1 : sarthakbakshi14@gmail.com \
@@ -86,4 +101,3 @@ With this you dont have to directly go and do assign all props, it will fetch it
 
 <hr />
    
-bd password : U*vQ4s-W$RkwWwL
