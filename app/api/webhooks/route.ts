@@ -9,7 +9,6 @@ import {
   manageSubscriptionStatusChange,
 } from "@/libs/supabaseAdmin";
 
-stripe
 const relevantEvents = new Set([
   "product.created",
   "product.updated",
