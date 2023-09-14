@@ -10,7 +10,7 @@ In this clone no Spotify Api is used, but funtionality using its own backend, s3
  1)  <a href="https://www.radix-ui.com"> radix-ui </a> ( Took <a href="https://www.radix-ui.com/primitives/docs/components/dialog"> Modal </a> & <a href="https://www.radix-ui.com/primitives/docs/components/slider"> Slider </a> for music player and volume slider ).
  2) <a href="https://react-hot-toast.com/"> react-hot-toast </a> ( for making toast popup ).
  3) <a href="https://www.davidhu.io/react-spinners/"> react-spinners </a> ( for loader screens ).
- 4) <a href="https://www.npmjs.com/package/use-sound"> use-sound </a> ( for music related functionality ).
+ 4) <a href="https://github.com/joshwcomeau/use-sound"> use-sound </a> ( for music related functionality ).
  5) <a href="https://docs.pmnd.rs/zustand/getting-started/introduction" > zustand </a> ( for state managent )
  6) [ ... etc ]
 
