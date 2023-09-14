@@ -1,5 +1,12 @@
 # Sotify Clone
 
+You can create a user to add music or play music. or use use the credentials below.
+
+user 1 : sarthakbakshi14@gmail.com
+password : 123456789
+
+user 1 : sarthakbakshii@gmail.com
+password : 123456789
 
 
 ## Learning and error fased while development
