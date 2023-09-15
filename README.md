@@ -13,8 +13,9 @@ In this clone no Spotify Api is used, but funtionality using its own backend, s3
  4) <a href="https://github.com/joshwcomeau/use-sound"> use-sound </a> ( for music related functionality ).
  5) <a href="https://docs.pmnd.rs/zustand/getting-started/introduction" > zustand </a> ( for state managent )
  6) [ ... etc ]
+<hr/>
 
-### General Functionalities 
+### General Functionalities:
 1) User can play song what he likes and can add songs also.
 2) To `play`/`like`/`add` any songs user must be logged-in.
 3) Addition of song is for `premium` user only, can take `subscription` to add any music to library.
@@ -23,12 +24,14 @@ In this clone no Spotify Api is used, but funtionality using its own backend, s3
 6) On `music player` section just as original, song `pause-play` `volume up-down`, `mute`, `next-previous songs` and `song duration slider` is also available.
 7) App is responsive
 
-#### Account Functionalities 
-1) To achive account functionailty Supabase Auth has been use.
-2) User can `log-in`, `sign-up`, can use `magic link` fuctionalitiy to log-in and can `reset password`.
-3) On sign-up and magic link login, a mail will be sent to you provided gmail
+#### Account Functionalities:
+8) To achive account functionailty Supabase Auth has been use.
+9) User can `log-in`, `sign-up`, can use `magic link` fuctionalitiy to log-in and can `reset password`.
+10) On sign-up and magic link login, a mail will be sent to you provided gmail.
+    
+<hr/>
 
-#### For play arround
+### For play arround :
 You can create a user to add music or play music. or use use the credentials below.
 
 User 1 : sarthakbakshi14@gmail.com \
@@ -36,9 +39,9 @@ Password : 123456789
 
 User 2 : sarthakbakshii@gmail.com\
 Password : 123456789
+<hr/>
 
-
-## Learning and error fased while development
+## Learning and error fased while development :
 1) Insted of directly creating a HTML element custom component, the new and better way i learned :
    ```
     import React, { forwardRef } from "react";
@@ -80,6 +83,7 @@ With this you dont have to directly go and do assign all props, it will fetch it
         },
       };
 
+<hr/>
 
 ## Stripe payment intigration
 1) Create an account on <a href="https://stripe.com/in?utm_campaign=IN_EN_Search_Brand_Stripe_EXA-19968032780&utm_medium=cpc&utm_source=google&ad_content=654755077645&utm_term=stripe&utm_matchtype=e&utm_adposition=&utm_device=c&gclid=Cj0KCQjwmICoBhDxARIsABXkXlKGWj3zymfPsS40X26cF7LDObrWYG8bTZF4p3Lz4dCq8kKoWoZCwKUaAoMWEALw_wcB"> Stripe </a> and reacte a project in it, in my case its `spotify_clone`.
