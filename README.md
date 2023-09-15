@@ -1,7 +1,7 @@
 # Sotify Clone
 
 Spotify clone that have its own User, Adding & Playing Music, Favorites Selection and lots more feature. <br/> 
-In this clone no Spotify Api is used, but funtionality using its own backend, s3 bucket and database.
+In this clone `no Spotify Api` is used, but funtionality using its own `backend`, `s3 bucket` and `database`.
 
 ### Tech Stacks
 <span> &#8226; </span> ` Next js ` <span> &#8226; </span> ` Typescript ` <span> &#8226; </span> ` Stripe payment ` <span> &#8226; </span>` Supabase ` <span> &#8226; </span> ` Tailwind `  <br />
